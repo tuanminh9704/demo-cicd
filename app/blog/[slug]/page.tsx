@@ -1,13 +1,13 @@
-interface PageProps {
+type BlogPageProps = {
   params: {
     slug: string;
   };
-}
-export async function generateMetadata({ params }: PageProps) {
+};
+export async function generateMetadata({ params }: PagBlogPagePropseProps) {
   return { title: `Post: ${params.slug}` };
 }
 
-export default function Page({ params }: PageProps) {
+export default function Page({ params }: BlogPageProps) {
   return (
     <>
       <h1>Slug: {params.slug}</h1>
