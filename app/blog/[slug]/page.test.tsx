@@ -14,3 +14,8 @@ it("Demo CICD should be in the document", () => {
   render(<Page params={{ slug: "Test" }} />);
   expect(screen.getByText("Demo CICD")).toBeInTheDocument();
 });
+
+it("Testing CICD should be in the document", () => {
+  render(<Page params={{ slug: "Test" }} />);
+  expect(screen.getByText("Testing CICD")).toBeInTheDocument();
+});
