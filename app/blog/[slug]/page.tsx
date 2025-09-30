@@ -1,18 +1,13 @@
-type BlogPageProps = Promise<{ params: { slug: string } }> & {
+type Params = {
   params: {
     slug: string;
   };
 };
-export async function generateMetadata({ params }: BlogPageProps) {
+
+export async function generateMetadata({ params }: Params) {
   return { title: `Post: ${params.slug}` };
 }
 
-export default function Page({ params }: BlogPageProps) {
-  return (
-    <>
-      <h1>Slug: {params.slug}</h1>
-      <p>Demo CICD</p>
-      <p>Testing CICD</p>
-    </>
-  );
+export default function Page({ params }: Params) {
+  return <h1>Slug: {params.slug}</h1>;
 }
