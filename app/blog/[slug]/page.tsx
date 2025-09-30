@@ -1,9 +1,9 @@
-type BlogPageProps = {
+type BlogPageProps = Promise<{ params: { slug: string } }> & {
   params: {
     slug: string;
   };
 };
-export async function generateMetadata({ params }: PagBlogPagePropseProps) {
+export async function generateMetadata({ params }: BlogPageProps) {
   return { title: `Post: ${params.slug}` };
 }
 
